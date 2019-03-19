@@ -47,7 +47,7 @@ button {
 
 .generator {
   background-color: #000;
-  margin: 0 2% 2% 2%;
+  margin: 0 2%;
   color: #fff;
 }
 
@@ -88,6 +88,9 @@ button {
   }
   .fields {
     flex-wrap: wrap;
+  }
+  .generator {
+    margin: 0 2% 2% 2%;
   }
   span {
     width: 100%;
