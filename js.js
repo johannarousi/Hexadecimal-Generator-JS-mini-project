@@ -22,11 +22,28 @@ for (let i = 0; i < 5; i++) {
   // declaring a new color variable so that it stays the same
   let color = theColor;
 
+  // creating a function that chooses black or white font-color for the color-text so it it is visible in every color
+  const blackOrWhite = () => {
+    let red = color.slice(1, 3);
+    let green = color.slice(3, 5);
+    let blue = color.slice(5);
+
+    let r = parseInt(red, 16);
+    let g = parseInt(green, 16);
+    let b = parseInt(blue, 16);
+
+    if (r + g + b > 400) {
+      return "black";
+    } else {
+      return "white";
+    }
+  };
   // creating the color box
   let box = document.createElement("div");
   box.style.backgroundColor = color;
   box.style.height = "120px";
   box.textContent = color;
+  box.style.color = blackOrWhite();
   wrapper.appendChild(box);
 
   // creating the copy-button
@@ -58,11 +75,28 @@ const newColors = function() {
     // declaring a new color variable so that it stays the same
     let color = theColor;
 
+    // creating a function that chooses black or white font-color for the color-text so it it is visible in every color
+    const blackOrWhite = () => {
+      let red = color.slice(1, 3);
+      let green = color.slice(3, 5);
+      let blue = color.slice(5);
+
+      let r = parseInt(red, 16);
+      let g = parseInt(green, 16);
+      let b = parseInt(blue, 16);
+
+      if (r + g + b > 400) {
+        return "black";
+      } else {
+        return "white";
+      }
+    };
     // creating the color box
     let box = document.createElement("div");
     box.style.backgroundColor = color;
     box.style.height = "120px";
     box.textContent = color;
+    box.style.color = blackOrWhite();
     wrapper.appendChild(box);
 
     // creating the copy-button
@@ -84,5 +118,6 @@ const newColors = function() {
     });
   }
 };
+
 // finally using the newColors function when the generator-button is clicked
 generatorBtn.addEventListener("click", newColors);
